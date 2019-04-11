@@ -7,10 +7,17 @@ describe('Game', function () {
   });
 
   it('gutter game scores zero', function() {
-    for(i = 0; i < 20; i++) {
+    for(var i = 0; i < 20; i++) {
       game.roll(0);
-      expect(game.score()).toEqual(0)
     }
+    expect(game.getScore()).toEqual(0)
+  });
+
+  it('a game of all 1s scores 20', function() {
+    for(var i = 0; i < 20; i++) {
+      game.roll(1);
+    }
+    expect(game.getScore()).toEqual(20)
   });
 
 });
